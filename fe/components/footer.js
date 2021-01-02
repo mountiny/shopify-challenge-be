@@ -1,22 +1,21 @@
 export default function Footer() {
   return (
-    <footer className="bg-blue-600">
-      <ul className="flex items-center justify-between lg:container px-4 py-6 mx-auto text-sm text-white md:px-6">
+    <footer className="bg-white">
+      <ul className="flex items-center justify-between lg:container px-4 py-6 mx-auto text-sm text-black md:px-6">
         <li>
-          Created by{" "}
           <a
-            href="https://taylorbrynat.dev"
+            href="https://mountiny.com"
             target="_blank"
             rel="noopener noreferrer"
             className="font-bold"
           >
-            Taylor Bryant
-          </a>
+            Vit Horacek
+          </a> for Shopify Backend Developer Intern Position
         </li>
 
         <li>
           <a
-            href="https://github.com/oddstronaut/next-starter-tailwind"
+            href="https://github.com/mountiny/shopify-challenge-be"
             target="_blank"
             rel="noopener noreferrer"
             className="font-bold"

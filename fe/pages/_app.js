@@ -6,10 +6,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <title>Next.js Starter Tailwind</title>
+        <title>Shopify Internship Code Challenge</title>
         <meta
           name="Description"
-          content="A Next.js starter styled using Tailwind CSS."
+          content="Shopify Backend Developer Internship Code Challenge"
         />
       </Head>
 

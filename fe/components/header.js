@@ -7,26 +7,18 @@ export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   return (
-    <header className="bg-green-600">
-      <div className="flex flex-wrap items-center justify-between lg:container px-4 py-6 mx-auto md:flex-no-wrap md:px-6">
+    <header className="bg-primary">
+      <div className="flex flex-wrap items-center text-secondary justify-between lg:container px-4 py-6 mx-auto md:flex-no-wrap md:px-6">
         <div className="flex items-center">
-          <Image
-            src="/tailwind-logo.svg"
-            width={40}
-            height={40}
-            priority
-            alt="Tailwind CSS logo"
-          />
-
           <Link href="/">
-            <a className="text-lg md:text-xl font-bold ml-3 text-white">
-              Next.js Starter Tailwind
+            <a className="text-lg md:text-xl font-bold ml-3">
+              Shopify Be Dev Internship Code Challenge
             </a>
           </Link>
         </div>
 
         <button
-          className="flex items-center block px-3 py-2 text-white border border-white rounded md:hidden"
+          className="flex items-center block px-3 py-2 border border-secondary rounded md:hidden"
           onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)}
         >
           <svg
@@ -47,11 +39,11 @@ export default function Header() {
         >
           {[
             { title: "Home", route: "/" },
-            { title: "About", route: "/about" },
+            { title: "Upload", route: "/upload" },
           ].map(({ route, title }) => (
-            <li className="mt-3 md:mt-0 md:ml-6" key={title}>
+            <li className="mt-3 px-3 md:px-0 md:mt-0 md:ml-6" key={title}>
               <Link href={route}>
-                <a className="block text-white">{title}</a>
+                <a className="block text-secondary">{title}</a>
               </Link>
             </li>
           ))}
