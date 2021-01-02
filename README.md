@@ -11,7 +11,7 @@ For the frontend part, I chose to use Next.js in combination with TailwindCSS. I
 
 To make the fetchin easier, I have used useSWR, which I find very handy when you need to revalidate data from backend which can change often.
 
-I have used Next.js + TailwindCSS started from Taylor Bryant to speed up the setting up process. The website is deployed on this link [https://shopify-challenge-be.vercel.app/].
+I have used Next.js + TailwindCSS started from Taylor Bryant to speed up the setting up process. The website is deployed on this link https://shopify-challenge-be.vercel.app/.
 
 ### Funcionalities
 
