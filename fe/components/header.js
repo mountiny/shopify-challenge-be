@@ -38,7 +38,7 @@ export default function Header() {
           )}
         >
           {[
-            { title: "Home", route: "/" },
+            { title: "Library", route: "/" },
             { title: "Upload", route: "/upload" },
           ].map(({ route, title }) => (
             <li className="mt-3 px-3 md:px-0 md:mt-0 md:ml-6" key={title}>

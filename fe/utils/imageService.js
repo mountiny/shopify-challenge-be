@@ -2,31 +2,20 @@ import { api, uploadApi } from "./api";
 import Axios from "axios";
 import useSWR from 'swr'
 
-export const getImages = async () => {
+export const getImages = () => {
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL
 
-  try {
-    const res = await api.get(`${API_URL}/upload/files`)
-    return res.data
-  } catch (error) {
-    console.log(error);
-    return false
-  }
+  const {
+    data: { data: images} = {},
+    isValidating,
+    mutate
+  } = useSWR(`${API_URL}/uploads`, api.get)
+
+  return {images, isValidating, mutate}
+
 }
 
-export const getImageById = async (id) => {
-
-  const API_URL = process.env.NEXT_PUBLIC_API_URL
-
-  try {
-    const res = await api.get(`${API_URL}/upload/files/${id}`)
-    return res.data
-  } catch (error) {
-    console.log(error.response.data);
-    return false
-  }
-}
 
 export const uploadImage = async (files, values) => {
 
@@ -46,7 +35,7 @@ export const uploadImage = async (files, values) => {
 
     const file = files[0];
     formData.append(`files.images`, file)
-    
+
   } else {
 
     for (let i = 0; i < files.length; i++) {
@@ -69,20 +58,13 @@ export const uploadImage = async (files, values) => {
   }
 }
 
-export const deleteImage = async (project, image) => {
+export const deleteImage = async (id) => {
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL
 
-  // Create Form date with needed information
-  const formData = new FormData()
-  formData.append('files', image)
-  formData.append('ref', 'project')
-  formData.append('refId', project.id)
-  formData.append('field', 'background')
-
   try {
-    const res = await uploadApi.delete(`${API_URL}/upload/files/${id}`, formData)
-    return res.data
+    await uploadApi.delete(`${API_URL}/uploads/${id}`)
+    return true
   } catch (error) {
     console.log(error.response);
     return false
